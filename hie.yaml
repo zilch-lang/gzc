@@ -1,0 +1,14 @@
+cradle:
+  stack:
+    - path: "./lib/gzc-core/src"
+      component: "gzc-core:lib"
+    - path: "./src"
+      component: "gzc-lib:lib"
+    - path: "./app"
+      component: "gzc-lib:exe:gzc"
+    - path: "./lib/gzc-parser/src"
+      component: "gzc-parser:lib"
+    - path: "./lib/gzc-pretty/src"
+      component: "gzc-pretty:lib"
+    - path: "./test"
+      component: "gzc-lib:unit-tests"

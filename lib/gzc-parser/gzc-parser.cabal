@@ -1,0 +1,43 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           gzc-parser
+version:        1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Language.Zilch.Syntax.Desugarer
+      Language.Zilch.Syntax.Errors
+      Language.Zilch.Syntax.Internal
+      Language.Zilch.Syntax.Lexer
+      Language.Zilch.Syntax.ModuleResolver
+      Language.Zilch.Syntax.Parser
+  other-modules:
+      Paths_gzc_parser
+  hs-source-dirs:
+      src
+  default-extensions:
+      BlockArguments
+      LambdaCase
+      ImplicitParams
+      OverloadedStrings
+  ghc-options: -Wall -Wextra
+  build-depends:
+      algebraic-graphs
+    , base >=4.7 && <5
+    , containers
+    , diagnose
+    , directory
+    , filepath
+    , gzc-core
+    , gzc-pretty
+    , megaparsec >=9.0.0
+    , mtl
+    , text
+    , unordered-containers
+    , vector
+  default-language: Haskell2010

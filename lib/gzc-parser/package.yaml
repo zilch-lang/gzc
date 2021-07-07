@@ -1,0 +1,26 @@
+name: gzc-parser
+version: !include "../../version.yaml"
+
+library:
+  source-dirs: src
+
+default-extensions: !include "../../default-extensions.yaml"
+
+dependencies:
+- base >= 4.7 && < 5
+- megaparsec >= 9.0.0
+- text
+- mtl
+- gzc-core
+- diagnose
+- containers
+- gzc-pretty
+- vector
+- unordered-containers
+- directory
+- filepath
+- algebraic-graphs
+
+ghc-options:
+- -Wall
+- -Wextra

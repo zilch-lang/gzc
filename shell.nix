@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import ./nix/nixpkgs-pinned.nix }:
 
 pkgs.mkShell {
   name = "gzc-shell";

@@ -1,0 +1,12 @@
+export (factorial, factorial2)
+
+let factorial(n : u64) : u64 := case n of
+  0 | 1 -> 1
+  _     -> n * factorial(n - 1)
+
+#[inline]
+let factorial2 : u64 -> u64 := aux(1, _)
+  where
+    let aux(acc : u64, n : u64) : u64 := case n of
+      0 | 1 -> acc
+      _     -> aux(acc * n, n - 1)

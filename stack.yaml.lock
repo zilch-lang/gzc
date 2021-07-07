@@ -3,5 +3,34 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
-snapshots: []
+packages:
+- completed:
+    name: diagnose
+    version: 1.0.0
+    git: https://github.com/mesabloo/diagnose.git
+    pantry-tree:
+      size: 818
+      sha256: 377bde6c89fb4f7e49033fbbf6452fd0b6b054b67bae8facacda9e8b2527f21b
+    commit: c6223edb04c952eda4794ce9fc99817f1bfc66c6
+  original:
+    git: https://github.com/mesabloo/diagnose.git
+    commit: c6223edb04c952eda4794ce9fc99817f1bfc66c6
+- completed:
+    subdir: lib/nsc-core
+    name: nsc-core
+    version: 2.0.0
+    git: https://github.com/zilch-lang/nsc.git
+    pantry-tree:
+      size: 384
+      sha256: fb32ca3b8baa00e6327f55d70107987ebca00f74621809d1c0f0490d79386056
+    commit: 8a9d1d5aa19fe6493c556ae3606c758829683762
+  original:
+    subdir: lib/nsc-core
+    git: https://github.com/zilch-lang/nsc.git
+    commit: 8a9d1d5aa19fe6493c556ae3606c758829683762
+snapshots:
+- completed:
+    size: 563099
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/17/3.yaml
+    sha256: 1e9f31ec160a144f796bc49b91dfc2bab5eca88b1dcc93da569108febaf5b382
+  original: lts-17.3

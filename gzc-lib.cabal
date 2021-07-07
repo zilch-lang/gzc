@@ -4,8 +4,8 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           gzc
-version:        0.1.0.0
+name:           gzc-lib
+version:        1.0.0
 description:    Please see the README on GitHub at <https://github.com/zilch-lang/gzc#readme>
 homepage:       https://github.com/zilch-lang/gzc#readme
 bug-reports:    https://github.com/zilch-lang/gzc/issues
@@ -26,34 +26,59 @@ library
   exposed-modules:
       Lib
   other-modules:
-      Paths_gzc
+      Paths_gzc_lib
   hs-source-dirs:
       src
+  default-extensions:
+      BlockArguments
+      LambdaCase
+      ImplicitParams
+      OverloadedStrings
   build-depends:
       base >=4.7 && <5
   default-language: Haskell2010
 
-executable gzc-exe
+executable gzc
   main-is: Main.hs
   other-modules:
-      Paths_gzc
+      Paths_gzc_lib
   hs-source-dirs:
       app
+  default-extensions:
+      BlockArguments
+      LambdaCase
+      ImplicitParams
+      OverloadedStrings
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , gzc
+    , gzc-lib
   default-language: Haskell2010
 
-test-suite gzc-test
+test-suite unit-tests
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_gzc
+      Common
+      LexerSpec
+      ParserSpec
+      Paths_gzc_lib
   hs-source-dirs:
       test
+  default-extensions:
+      BlockArguments
+      LambdaCase
+      ImplicitParams
+      OverloadedStrings
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
-    , gzc
+      ansi-wl-pprint
+    , base >=4.7 && <5
+    , diagnose
+    , gzc-core
+    , gzc-lib
+    , gzc-parser
+    , hspec
+    , raw-strings-qq
+    , text
   default-language: Haskell2010

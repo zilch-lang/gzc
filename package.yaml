@@ -1,5 +1,5 @@
-name:                gzc
-version:             0.1.0.0
+name:                gzc-lib
+version:             !include "version.yaml"
 github:              "zilch-lang/gzc"
 license:             BSD3
 author:              "Mesabloo"
@@ -17,6 +17,8 @@ extra-source-files:
 # common to point users to the README.md file.
 description:         Please see the README on GitHub at <https://github.com/zilch-lang/gzc#readme>
 
+default-extensions: !include "default-extensions.yaml"
+
 dependencies:
 - base >= 4.7 && < 5
 
@@ -24,7 +26,7 @@ library:
   source-dirs: src
 
 executables:
-  gzc-exe:
+  gzc:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -32,10 +34,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - gzc
+    - gzc-lib
 
 tests:
-  gzc-test:
+  unit-tests:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -43,4 +45,11 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - gzc
+    - gzc-lib
+    - hspec
+    - text
+    - diagnose
+    - ansi-wl-pprint
+    - gzc-core
+    - gzc-parser
+    - raw-strings-qq
